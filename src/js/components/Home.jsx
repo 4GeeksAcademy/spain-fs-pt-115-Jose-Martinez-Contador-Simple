@@ -1,28 +1,23 @@
-import React from "react";
+import React from 'react';
+import { Contador } from './Contador.jsx';
+import { Controlador } from './Controlador.jsx';
+import { Alerta } from './Alerta.jsx';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-            
-
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+const Home = (props) => {
+  return (
+    <div className="container">
+      <h1>Contador</h1>
+      <Contador seconds={props.seconds} />
+      <Controlador 
+        isActive={props.isActive} 
+        toggle={props.controls.toggle}
+        reset={props.controls.reset}
+        startCountdown={props.controls.startCountdown}
+        startCountUp={props.controls.startCountUp}
+      />
+      <Alerta currentTime={props.seconds} />
+    </div>
+  );
 };
 
 export default Home;
