@@ -11,18 +11,18 @@ export const Alerta = ({ currentTime }) => {
   }, [currentTime, alertTime]);
 
   return (
+   
     <div className="alert-control">
-      <label>
-        Alertar a los:
-        <input
-          type="number"
-          placeholder="Ej: 10"
-          value={alertTime}
-          onChange={(e) => setAlertTime(e.target.value)}
-          style={{ marginLeft: '10px', width: '80px' }}
-        />
-        <span> segundos</span>
-      </label>
+      
+      <label htmlFor="alertInput">Alertar a los:</label>
+      <input
+        id="alertInput"
+        type="number"
+        placeholder="Ej: 10"
+        value={alertTime}
+        onChange={(e) => setAlertTime(e.target.value)}
+      />
+      <span>segundos</span>
     </div>
   );
 };

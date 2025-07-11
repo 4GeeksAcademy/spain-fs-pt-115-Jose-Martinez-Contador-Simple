@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto+Mono:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #e0e0e0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  box-sizing: border-box; 
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: clamp(24px, 5vw, 40px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 580px;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(28px, 5vw, 36px); 
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  position: relative; 
+  z-index: 2;
+  margin-top: 0;
+  margin-bottom: -20px;
+}
+
+.counter-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 24px 0;
+  border-radius: 10px;
+  padding: 35px 16px 16px 16px;
+  flex-wrap: wrap; 
+}
+
+.counter-icon {
+  font-size: clamp(32px, 7vw, 40px);
+  color: #fff;
+  flex-shrink: 0; 
+}
+
+.digit-card {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: clamp(28px, 9vw, 56px); 
+  font-weight: 700;
+  padding: clamp(12px, 3vw, 20px) clamp(8px, 2vw, 16px);
+  border-radius: 8px;
+  line-height: 1;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.controls {
+  margin: 32px 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+  flex-grow: 1; 
+  flex-basis: 180px;
+}
+
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.alert-control {
+  margin-top: 24px;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.alert-control input {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    padding: 10px;
+    width: 90px;
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+  }
+}
